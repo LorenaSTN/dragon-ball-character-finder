@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 
-=======
 # Dragon Ball Character Finder
 
 A React application to search and explore Dragon Ball characters. Allows filtering characters by name and power level (Ki), with detailed views upon selection.
 
-<img width="1440" alt="Captura de pantalla 2025-05-16 a las 20 14 09" src="https://github.com/user-attachments/assets/3b703180-acaf-4016-9b25-c740a92e4783" />
+![Captura de pantalla 2025-05-16 a las 20 14 09](https://github.com/user-attachments/assets/3b703180-acaf-4016-9b25-c740a92e4783)
 
 ## Usage
 
@@ -19,32 +17,31 @@ A React application to search and explore Dragon Ball characters. Allows filteri
 - SASS
 - React
 
-
-## Instalation
+## Installation
 
 Steps to follow
 
 1. Clone the repository:
 
-```html
+```bash
 git clone https://github.com/LorenaSTN/dragon-ball-character-finder.git
 ```
 
-2. Navigate to the project directory:
+1. Navigate to the project directory:
 
-```html
+```bash
 cd dragon-ball-character-finder
 ```
 
-3. Install dependencies:
+1. Install dependencies:
 
-```html
+```bash
 npm install
 ```
 
-4. Run the app:
+1. Run the app:
 
-```html
+```bash
 npm run dev
 ```
 
@@ -52,4 +49,3 @@ npm run dev
 
 Lorena Sánchez-Toril
 [Linkedin](https://www.linkedin.com/in/lorena-sancheztoril/)
->>>>>>> 254752db4801da972dda17367d49ca78ca209e9f
