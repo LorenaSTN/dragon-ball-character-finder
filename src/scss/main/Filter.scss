@@ -1,8 +1,91 @@
-.filter{
-    &__container{
-        background-color: white;
-        min-width: 320px;
-        max-width: 380px;
+.filter {
+  &__container {
+    background-color: white;
+    min-width: 320px;
+    max-width: 380px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: orange;
+    padding: 20px 8px;
+
+    &__title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+      width: 60%;
+      line-height: 1.5;
+      margin-left: 8px;
     }
-    
+
+    &__image {
+      width: 50px;
+    }
+  }
+
+  &__description {
+    margin-top: 40px;
+    font-weight: 500;
+    padding: 0px 16px;
+  }
+
+  &__form {
+    &__div {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      font-weight: 300;
+      padding: 0px 16px;
+
+      & label {
+        margin-bottom: 8px;
+      }
+
+      & input {
+        border: 1px solid rgb(188, 188, 188);
+        border-radius: 8px;
+        margin-bottom: 16px;
+        padding: 8px 12px;
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__ki {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__selects {
+    margin-bottom: 40px;
+
+    & select {
+      width: 50%;
+      padding: 8px 12px;
+      border: 1px solid rgb(188, 188, 188);
+      border-radius: 8px;
+    }
+  }
+
+  &__button {
+    background-color: rgb(255, 216, 143);
+    border: 1px solid rgb(161, 135, 88);
+    font-family: "Roboto", sans-serif;
+    color: rgb(161, 135, 88);
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
 }
