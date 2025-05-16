@@ -1,0 +1,12 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px;
+  }
+}

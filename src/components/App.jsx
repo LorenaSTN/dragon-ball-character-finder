@@ -3,27 +3,39 @@ import charactersFromApi from "./services/charactersFromApi";
 import { useEffect, useState } from "react";
 import Filter from "./Filter";
 import parseKi from "./services/parseki";
-import Finder from "./Finder"; 
+import Finder from "./Finder";
+import Cards from "./Cards";
+import { useRef } from "react";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [filtered, setFiltered] = useState([]);
   const [kiFrom, setKiFrom] = useState(0);
-  const [kiTo, setKiTo] = useState(0);
+  const [kiTo, setKiTo] = useState(Infinity);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+
+  const finderListRef = useRef(null);
 
   useEffect(() => {
     charactersFromApi().then((charactersData) => {
- 
-      const formatted = charactersData.map((character) =>({
+      const formatted = charactersData.map((character) => ({
         ...character,
-        parsed: parseKi(character.ki)
-      }))
+        parsedKi: parseKi(character.ki),
+      }));
       setCharacters(formatted);
       setFiltered(formatted);
     });
   }, []);
 
+  useEffect(() => {
+    if (selectedCharacter && finderListRef.current) {
+      finderListRef.current.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [selectedCharacter]);
 
   const handleChangeKiRange = (from, to) => {
     setKiFrom(from);
@@ -34,7 +46,9 @@ function App() {
     ev.preventDefault();
 
     const result = characters.filter((char) => {
-      const nameMatch = char.name.toLowerCase().includes(filterName.toLowerCase());
+      const nameMatch = char.name
+        .toLowerCase()
+        .includes(filterName.toLowerCase());
       const kiMatch = char.parsedKi >= kiFrom && char.parsedKi <= kiTo;
       return nameMatch && kiMatch;
     });
@@ -42,7 +56,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <Filter
         valueName={filterName}
         onChangeName={setFilterName}
@@ -52,7 +66,18 @@ function App() {
         onSubmit={handleSubmit}
       />
 
-      
+      <Finder
+        characters={filtered}
+        onSelectCharacter={setSelectedCharacter}
+        selectedCharacter={selectedCharacter}
+        listRef={finderListRef}
+      />
+
+      <Cards
+        characters={filtered}
+        selectedCharacter={selectedCharacter}
+        onSelectCharacter={setSelectedCharacter}
+      />
     </div>
   );
 }

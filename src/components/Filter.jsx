@@ -1,7 +1,7 @@
 import "../scss/main/Filter.scss";
 import PropTypes from "prop-types";
 import kiOptions from "./services/kiOptions";
-import DB from "../images/DB.png"
+import DB from "../images/DB.png";
 
 const options = kiOptions();
 
@@ -42,43 +42,44 @@ function Filter({
 
       <form className="filter__form" onSubmit={onSubmit}>
         <div className="filter__form__div">
-        <div className="filter__name">
-          <label htmlFor="name">Search by name</label>
-          <input
-            className="input__name"
-            type="text"
-            id="name"
-            placeholder="🔍 Goku"
-            value={valueName}
-            onChange={handleChangeName}
-          />
-        </div>
-
-        <div className="filter__ki">
-          <label htmlFor="ki">Search Ki range</label>
-          <div className="filter__selects">
-            <select
-              value={kiFrom}
-              onChange={(ev) => handleKiChange(ev, "from")}
-            >
-              {options.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-            <select value={kiTo} onChange={(ev) => handleKiChange(ev, "to")}>
-              {options.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
+          <div className="filter__name">
+            <label htmlFor="name">Search by name</label>
+            <input
+              className="input__name"
+              type="text"
+              id="name"
+              placeholder="🔍 Goku"
+              value={valueName}
+              onChange={handleChangeName}
+            />
           </div>
-        </div>
 
-        <button className="filter__button" type="submit">Search</button>
-    
+          <div className="filter__ki">
+            <label htmlFor="ki">Search Ki range</label>
+            <div className="filter__selects">
+              <select
+                value={kiFrom}
+                onChange={(ev) => handleKiChange(ev, "from")}
+              >
+                {options.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+              <select value={kiTo} onChange={(ev) => handleKiChange(ev, "to")}>
+                {options.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <button className="filter__button" type="submit">
+            Search
+          </button>
         </div>
       </form>
     </div>

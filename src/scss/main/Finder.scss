@@ -1,0 +1,60 @@
+.finder {
+  &__container {
+    background-color: white;
+    min-width: 320px;
+    max-width: 380px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    height: 550px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: orange;
+    padding: 20px 8px;
+
+    &__title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+      width: 60%;
+      line-height: 1.5;
+      margin-left: 8px;
+    }
+
+    &__image {
+      width: 50px;
+    }
+  }
+
+  &__description {
+    margin-top: 40px;
+    margin-left: 16px;
+    font-weight: 500;
+  }
+
+  &__div {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+
+  &__li {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: rgb(255, 229, 180);
+    padding: 8px 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  &__icon {
+    margin-left: 8px;
+  }
+}
