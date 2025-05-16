@@ -27,19 +27,19 @@ Steps to follow
 git clone https://github.com/LorenaSTN/dragon-ball-character-finder.git
 ```
 
-1. Navigate to the project directory:
+2. Navigate to the project directory:
 
 ```bash
 cd dragon-ball-character-finder
 ```
 
-1. Install dependencies:
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-1. Run the app:
+4. Run the app:
 
 ```bash
 npm run dev
